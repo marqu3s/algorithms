@@ -62,4 +62,31 @@ class Unique
 
         return true;
     }
+
+    /**
+     * Checks if a string has all unique characters.
+     * It breaks the string in an array, sorts it and loop thru it.
+     * If the current character in the loop is equals to the previous char,
+     * then there is at least one repeated character.
+     * @param $str
+     * @return bool
+     */
+    public static function uniqueChars3($str)
+    {
+        if (! is_string($str)) {
+            throw new \InvalidArgumentException;
+        }
+
+        $charArr = str_split($str);
+        sort($charArr);
+        $lastChar = null;
+        foreach ($charArr as $char) {
+            if ($char === $lastChar) {
+                return false;
+            }
+            $lastChar = $char;
+        }
+
+        return true;
+    }
 }
