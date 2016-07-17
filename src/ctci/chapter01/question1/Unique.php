@@ -24,9 +24,7 @@ class Unique
      */
     public static function uniqueChars1($str)
     {
-        if (! is_string($str)) {
-            throw new \InvalidArgumentException;
-        }
+        self::validateParams($str);
 
         # Every time a character appears on the string, add it to an array.
         $chars = [];
@@ -48,9 +46,7 @@ class Unique
      */
     public static function uniqueChars2($str)
     {
-        if (! is_string($str)) {
-            throw new \InvalidArgumentException;
-        }
+        self::validateParams($str);
 
         # Compare the first character with the others ...
         # Compare the second character with the others ...
@@ -73,9 +69,7 @@ class Unique
      */
     public static function uniqueChars3($str)
     {
-        if (! is_string($str)) {
-            throw new \InvalidArgumentException;
-        }
+        self::validateParams($str);
 
         $charArr = str_split($str);
         sort($charArr);
@@ -88,5 +82,16 @@ class Unique
         }
 
         return true;
+    }
+
+    /**
+     * Validate is the parameter is a string
+     * @param string $str
+     */
+    private static function validateParams($str)
+    {
+        if (!is_string($str)) {
+            throw new \InvalidArgumentException;
+        }
     }
 }
