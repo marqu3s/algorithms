@@ -43,7 +43,7 @@ class Permutation
 
         /**
          * Check if the strings are identical.
-         * They can't be identical. There must be at least one character with changed position.
+         * They can't be identical. There must be at least one character that switched position.
          */
         if ($str1 === $str2) {
             return false;
