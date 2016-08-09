@@ -35,18 +35,18 @@ class CyclicRotation
      */
     public static function solution($a, $k)
     {
-        $lenght = count($a);
-        if ($k === 0 || $k === $lenght) return $a;
+        $length = count($a);
+        if ($k === 0 || $k === $length) return $a;
 
-        if ($k > $lenght) {
-            $k = $k % $lenght;
+        if ($k > $length) {
+            $k = $k % $length;
         }
 
-        for ($i = $lenght - $k; $i <= $lenght - 1; $i++) {
+        for ($i = $length - $k; $i <= $length - 1; $i++) {
             $result[] = $a[$i];
         }
 
-        for ($i = 0; $i < $lenght - $k; $i++) {
+        for ($i = 0; $i < $length - $k; $i++) {
             $result[] = $a[$i];
         }
 
