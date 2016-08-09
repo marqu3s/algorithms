@@ -53,5 +53,3 @@ class CyclicRotation
         return $result;
     }
 }
-
-var_dump(CyclicRotation::solution([1, 2, 3, 4], 1));
